@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+   
+    <link rel="icon" href="Images/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="icon" href="Images/android-chrome-192x192.png" sizes="48x48" type="image/png">
+    
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="Images/favicon-32x32.png" sizes="32x32" type="image/png">
+  
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.pngapple-touch-icon.png">
+    <title>About Us - Green Job Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f8e9;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:80%;
+        }
+        header img {
+            height: 40px;
+            width: auto;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .about-section {
+            padding: 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .about-section h1 {
+            color: #2e7d32;
+        }
+        .about-section p {
+            font-size: 18px;
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .about-section h2 {
+            color: #388e3c;
+            margin-top: 40px;
+        }
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .logo{
+          height:49px;
+          width:200px;
+          object-fit: cover;
+          border-radius: 23px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="greenlogo.webp" alt="Green Job Portal Logo">
+        <nav>
+            <a href="homepage.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="about-section">
+        <h1>About Green Job Portal</h1>
+        <p>Green Job Portal is an online platform designed to connect individuals with job opportunities in the sustainable energy and environmental sectors. We aim to help you find a career that contributes to a greener, more sustainable world. Whether you're looking for a job in renewable energy, environmental sciences, or green technology, we offer a range of opportunities that allow you to make a positive impact on the planet.</p>
+
+        <h2>Our Mission</h2>
+        <p>At Green Job Portal, our mission is to provide a comprehensive and user-friendly platform where employers and job seekers can connect to build a sustainable future. We work closely with organizations and institutions in the green sector to offer meaningful employment opportunities that help reduce carbon footprints and foster sustainability.</p>
+
+        <h2>Why Choose Us?</h2>
+        <p>We focus on providing job listings that are environmentally conscious and help individuals contribute to reducing the negative impacts of human activity on the planet. Our platform is designed with user experience in mind, making it easy to search for and apply to jobs that match your skills and passions.</p>
+
+        <h2>Our Values</h2>
+        <p>We believe in sustainability, innovation, and community. We are committed to bringing together job seekers and employers who share a vision for a better world, with a focus on sustainable growth and environmental preservation.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Green Job Portal. All rights reserved.</p>
+    </footer>
+    <script>
+      // Redirect to application page when Apply Now is clicked
+      document.querySelectorAll('.apply-button').forEach(button => {
+            button.addEventListener('click', () => {
+                window.location.href = 'homepage.html';
+            });
+        });
+    </script>
+</body>
+</html>

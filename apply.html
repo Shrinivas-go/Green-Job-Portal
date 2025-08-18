@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon">
+   
+    <link rel="icon" href="Images/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="icon" href="Images/android-chrome-192x192.png" sizes="48x48" type="image/png">
+    
+    <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="Images/favicon-32x32.png" sizes="32x32" type="image/png">
+  
+    <link rel="apple-touch-icon" href="Images/apple-touch-icon.pngapple-touch-icon.png">
+    <title>Application Form - Green Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+        }
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:60%;
+        }
+        header img {
+            height: 40px;
+            width: auto;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select,
+        .form-group button {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #bdbdbd;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-group select {
+            cursor: pointer;
+        }
+        .form-group button {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #2e7d32;
+        }
+        .form-group .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+        .radio-group label {
+            margin-right: 5px;
+        }
+
+        /* Pop-Up Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: popUpAnimation 0.3s forwards;
+            z-index: 1000;
+        }
+        .popup h2 {
+            color: #388e3c;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background-color: #2e7d32;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Animation */
+        @keyframes popUpAnimation {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+      
+        .logo{
+          height:49px;
+          width:200px;
+          object-fit: cover;
+          border-radius: 23px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="greenlogo.webp" alt="Green Job Portal Logo">
+        <nav>
+            <a href="homepage.html" id="homeLink">Home</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Application Form</h1>
+        <form id="applicationForm">
+            <!-- Personal Details -->
+            <div class="form-group">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" placeholder="Enter your address..." required></textarea>
+            </div>
+
+            <!-- Job Details -->
+            <div class="form-group">
+                <label for="job-title">Job Title You're Applying For:</label>
+                <input type="text" id="job-title" name="job-title" placeholder="Enter the job title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experience Level:</label>
+                <select id="experience" name="experience" required>
+                    <option value="" disabled selected>Select your experience level</option>
+                    <option value="Fresher">Fresher</option>
+                    <option value="1-3 Years">1-3 Years</option>
+                    <option value="3-5 Years">3-5 Years</option>
+                    <option value="5+ Years">5+ Years</option>
+                </select>
+            </div>
+
+            <!-- Resume Upload -->
+            <div class="form-group">
+                <label for="resume">Upload Resume (PDF/DOC):</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <!-- Skills -->
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <textarea id="skills" name="skills" placeholder="List your skills..." required></textarea>
+            </div>
+
+            <!-- LinkedIn Profile -->
+            <div class="form-group">
+                <label for="linkedin">LinkedIn Profile URL:</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/your-profile">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Pop-Up -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Application Submitted!</h2>
+        <p>Thank you for applying. We will get back to you soon.</p>
+        <button id="closePopup">Close</button>
+    </div>
+
+    <script>
+        // Get Elements
+        const form = document.getElementById('applicationForm');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        const closePopupButton = document.getElementById('closePopup');
+
+        // Show Pop-Up on Form Submit
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent form submission
+            overlay.style.display = 'block';
+            popup.style.display = 'block';
+        });
+
+        // Close Pop-Up
+        closePopupButton.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+            window.location.href = 'homepage.html';
+
+        });
+
+        // Close Pop-Up by Clicking Outside
+        overlay.addEventListener('click', () => {
+            overlay.style.display = 'none';
+            popup.style.display = 'none';
+        });
+        // Redirect to application page when Apply Now is clicked
+      document.querySelectorAll('.apply-button').forEach(button => {
+            button.addEventListener('click', () => {
+                window.location.href = 'homepage.html';
+            });
+        });
+    </script>
+</body>
+</html>
