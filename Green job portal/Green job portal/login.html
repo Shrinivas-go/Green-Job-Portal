@@ -153,44 +153,51 @@
     <div id="popup">
         <div class="popup-title">Welcome to Green Job Portal!</div>
         <div class="popup-message">Hello, <span id="popup-username"></span>!</div>
-        <button class="close-popup" onclick="closePopup()">Close</button>
+        <!-- <button class="close-popup" onclick="closePopup()">Close</button> -->
     </div>
 
-    <script>
-        function login() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const messageDiv = document.getElementById('message');
-            const popup = document.getElementById('popup');
-            const usernameSpan = document.getElementById('popup-username');
+  <script>
+    function login() {
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const popup = document.getElementById('popup');
+        const usernameSpan = document.getElementById('popup-username');
 
-            if (email && password) {
-                // Set username in the popup and show it
-                usernameSpan.textContent = email.split('@')[0]; // Extract username from email
-                popup.style.display = 'block';
+        // ✅ Basic email regex validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                // Show the popup with animation
-                setTimeout(function() {
-                    popup.style.opacity = '1'; // Fade-in effect
-                }, 200); // Reduced delay before fade-in
-
-                // Close the popup after 2 seconds and redirect to homepage
-                setTimeout(function() {
-                    closePopup();
-                    window.location.href = 'homepage.html'; // Redirect to homepage
-                }, 2500); // Keep the popup for 2.5 seconds (Reduced delay)
-            } else {
-                messageDiv.textContent = "Please enter both email and password.";
-            }
+        if (!emailPattern.test(email)) {
+            alert("⚠️ Please enter a valid email address.");
+            return;
         }
 
-        function closePopup() {
-            const popup = document.getElementById('popup');
-            popup.style.animation = 'popupFadeOut 1s forwards'; // Fade-out effect
-            setTimeout(function() {
-                popup.style.display = 'none'; // Hide the popup after fade-out
-            }, 1000); // Wait for fade-out to complete
+        if (password !== "1111") {
+            alert("⚠️ Incorrect password. Try again.");
+            return;
         }
-    </script>
+
+        // ✅ If valid email + correct password, show popup
+        usernameSpan.textContent = email.split('@')[0]; // Extract username
+        popup.style.display = 'block';
+
+        setTimeout(function() {
+            popup.style.opacity = '1'; 
+        }, 200);
+
+        // Redirect after 2.5s
+        setTimeout(function() {
+            closePopup();
+            window.location.href = 'homepage.html'; 
+        }, 2500);
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        popup.style.animation = 'popupFadeOut 1s forwards';
+        setTimeout(function() {
+            popup.style.display = 'none';
+        }, 1000);
+    }
+</script>
 </body>
 </html>
